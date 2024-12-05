@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Data from JSON</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 600px;"></div>
+    <script>
+        // Inicializa el mapa
+        var map = L.map('map').setView([10.602, -66.934], 13);
+
+        // Añadir capa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Función para cargar y procesar el archivo JSON
+        function loadJSON(jsonPath) {
+            fetch(jsonPath)
+                .then(response => response.json())
+                .then(data => {
+                    addMarkers(data);
+                });
+        }
+
+        // Función para agregar marcadores al mapa
+        function addMarkers(data) {
+            data.forEach(function(location) {
+                if (!isNaN(location.lat) && !isNaN(location.lng)) {
+                    L.marker([location.lat, location.lng]).addTo(map)
+                        .bindPopup(location.description);
+                }
+            });
+        }
+
+        // Cargar el archivo JSON
+        loadJSON('json.json'); // Asegúrate de que la ruta sea correcta
+    </script>
+</body>
+</html>

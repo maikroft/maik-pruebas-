@@ -1,0 +1,27 @@
+[
+  {
+      "lat": 10.600087,
+      "lng": -67.038917,
+      "description": "Este es el Salto Ángel, la cascada más alta del mundo."
+  },
+  {
+      "lat": 10.600371,
+      "lng": -67.024783,
+      "description": "Este es un Tepuy, una formación geológica única en Venezuela."
+  },
+  {
+      "lat": 10.587999,
+      "lng": -67.016903,
+      "description": "Una hermosa vista desde el Parque Nacional."
+  },
+  {
+      "lat": 10.602325,
+      "lng": -67.027949,
+      "description": "Un lugar histórico con mucha cultura."
+  },
+  {
+      "lat": 10.605177,
+      "lng": -67.035646,
+      "description": "Un parque maravilloso para visitar."
+  }
+]
